@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { DB_NAME } from "../constants";
+import { DB_NAME } from "../constants.js";
 
 const connectDB = async () => {
   try {
@@ -11,6 +11,8 @@ const connectDB = async () => {
   } catch (error) {
     console.log("MONGODB connection error:", error);
     process.exit(1);
+    // process.exit is the nodejs feature to exit the process
+    // 1 is the exit code for failure
   }
 };
 export default connectDB;
